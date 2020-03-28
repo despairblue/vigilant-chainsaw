@@ -14,6 +14,7 @@ public class GroceriesGun : MonoBehaviour
     public float yOffset = 0f;
     public float xOffset = 0f;
     public float xPadding = 0f;
+    public bool alwaysRender = false;
 
     private int active = -1;
 
@@ -60,7 +61,10 @@ public class GroceriesGun : MonoBehaviour
             rigidBody2d.AddRelativeForce(new Vector2(0, shootVelocity), ForceMode2D.Impulse);
         }
 
-        // RenderGroceryGun();
+        if (alwaysRender)
+        {
+            RenderGroceryGun();
+        }
     }
 
     private void SelectGrocery(int index)
