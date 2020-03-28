@@ -6,6 +6,8 @@ public enum Groceries
 {
     Nothing,
     ToiletPaper,
+    Desinfectant,
+    Yeast,
 }
 
 public enum State
@@ -25,6 +27,8 @@ public class Person : MonoBehaviour
     public Transform veryWaiting;
     public Transform happy;
     public Transform angry;
+    public float timeBetweenStateChangesSeconds = 3f;
+    public float chanceOfStateChange = 0.5f;
 
     private List<Transform> stateGameObjectsList;
 
@@ -33,6 +37,7 @@ public class Person : MonoBehaviour
     void Start()
     {
         stateGameObjectsList = new List<Transform> { normalWaiting, veryWaiting, happy, angry };
+        StartCoroutine(ChangeState());
     }
 
     // Update is called once per frame
@@ -59,6 +64,11 @@ public class Person : MonoBehaviour
             }
         }
     }
+
+    // private void SetState(State newState) {
+
+
+    // }
 
     private void Render()
     {
@@ -95,5 +105,38 @@ public class Person : MonoBehaviour
             default:
                 return null;
         }
+    }
+
+    private IEnumerator ChangeState()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(timeBetweenStateChangesSeconds);
+
+            var chance = Random.Range(0f, 1f);
+
+            if (chance > chanceOfStateChange)
+            {
+                switch (state)
+                {
+                    case State.Complacent:
+                        need = (Groceries)Random.Range(1, System.Enum.GetNames(typeof(Groceries)).Length);
+                        state = State.NormalWaiting;
+                        break;
+                    case State.NormalWaiting:
+                        state = State.VeryWaiting;
+                        break;
+                    case State.VeryWaiting:
+                        state = State.Angry;
+                        break;
+                    case State.Happy:
+                    case State.Angry:
+                        need = Groceries.Nothing;
+                        state = State.Complacent;
+                        break;
+                }
+            }
+        }
+
     }
 }

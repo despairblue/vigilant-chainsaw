@@ -4932,8 +4932,8 @@ GameObject:
   - component: {fileID: 149650609}
   - component: {fileID: 149650608}
   m_Layer: 0
-  m_Name: TP (2)
-  m_TagString: Untagged
+  m_Name: Yeast
+  m_TagString: Yeast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16320,6 +16320,8 @@ MonoBehaviour:
   veryWaiting: {fileID: 1889087699}
   happy: {fileID: 920185741}
   angry: {fileID: 829234328}
+  timeBetweenStateChangesSeconds: 3
+  chanceOfStateChange: 0.5
 --- !u!61 &1296727930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17188,8 +17190,8 @@ GameObject:
   - component: {fileID: 1797404311}
   - component: {fileID: 1797404310}
   m_Layer: 0
-  m_Name: TP (1)
-  m_TagString: Untagged
+  m_Name: Desinfectant
+  m_TagString: Desinfectant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
