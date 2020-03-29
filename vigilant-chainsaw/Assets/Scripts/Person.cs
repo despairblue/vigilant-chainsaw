@@ -38,6 +38,9 @@ public class Person : MonoBehaviour
 
     // GameLoop
     public float timeBetweenStateChangesSeconds = 3f;
+    public float variance = 0.5f;
+    public float speedUpFactor = 0.95f;
+    public float speedUpTimer = 20f;
     public float chanceOfStateChange = 0.5f;
 
     private List<Transform> stateGameObjectsList;
@@ -56,6 +59,7 @@ public class Person : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = false;
         StartCoroutine(ChangeState());
+        StartCoroutine(ChangeSpeed());
     }
 
     // Update is called once per frame
@@ -82,6 +86,9 @@ public class Person : MonoBehaviour
                 state = State.Angry;
                 gameState.ReduceLife();
             }
+            // Disables the speech bubble as well.
+            need = Groceries.Nothing;
+            boxCollider.enabled = false;
         }
     }
 
@@ -179,7 +186,7 @@ public class Person : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timeBetweenStateChangesSeconds);
+            yield return new WaitForSeconds(timeBetweenStateChangesSeconds + Random.Range(-variance, variance));
 
             var chance = Random.Range(0f, 1f);
 
@@ -197,6 +204,7 @@ public class Person : MonoBehaviour
                         break;
                     case State.VeryWaiting:
                         state = State.Angry;
+                        need = Groceries.Nothing;
                         gameState.ReduceLife();
                         break;
                     case State.Happy:
@@ -209,5 +217,16 @@ public class Person : MonoBehaviour
             }
         }
 
+    }
+
+    private IEnumerator ChangeSpeed()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(speedUpTimer);
+
+            timeBetweenStateChangesSeconds = timeBetweenStateChangesSeconds * speedUpFactor;
+            variance = variance * speedUpFactor;
+        }
     }
 }
