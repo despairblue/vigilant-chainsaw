@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -54,5 +55,10 @@ public class GameState : MonoBehaviour
     {
         currentLifes -= 1;
         Render();
+
+        if (currentLifes <= 0)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
