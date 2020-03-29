@@ -215,12 +215,12 @@ public class Person : MonoBehaviour
                         state = State.Angry;
                         need = Groceries.Nothing;
                         gameState.ReduceLife();
+                        boxCollider.enabled = false;
                         break;
                     case State.Happy:
                     case State.Angry:
                         need = Groceries.Nothing;
                         state = State.Complacent;
-                        boxCollider.enabled = false;
                         break;
                 }
             }
