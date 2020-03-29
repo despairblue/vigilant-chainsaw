@@ -746,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 1864281485}
+  creditButton: {fileID: 1745550924}
 --- !u!224 &738018357
 RectTransform:
   m_ObjectHideFlags: 0
