@@ -101,7 +101,7 @@ public class GroceriesGun : MonoBehaviour
         {
             var grocery = groceries[i];
             var y = i == active ? startY + activeOffset : startY;
-            grocery.SetPositionAndRotation(new Vector2(x, y), Quaternion.identity);
+            grocery.SetPositionAndRotation(new Vector3(x, y, grocery.position.z), Quaternion.identity);
             x = x + xPadding;
         }
     }
