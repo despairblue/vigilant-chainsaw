@@ -16257,7 +16257,7 @@ GameObject:
   - component: {fileID: 1296727929}
   m_Layer: 0
   m_Name: Person02
-  m_TagString: Untagged
+  m_TagString: Person
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16452,6 +16452,7 @@ GameObject:
   - component: {fileID: 1560666777}
   - component: {fileID: 1560666776}
   - component: {fileID: 1560666778}
+  - component: {fileID: 1560666779}
   m_Layer: 0
   m_Name: TP
   m_TagString: ToiletPaper
@@ -16568,6 +16569,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1560666779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560666774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b658ccdc658e006a3a60316b3411a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1572652749
 GameObject:
   m_ObjectHideFlags: 0
@@ -16694,7 +16707,7 @@ GameObject:
   - component: {fileID: 1689497776}
   m_Layer: 0
   m_Name: Person01
-  m_TagString: Untagged
+  m_TagString: Person
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17812,7 +17825,7 @@ GameObject:
   - component: {fileID: 2027366294}
   m_Layer: 0
   m_Name: Person03
-  m_TagString: Untagged
+  m_TagString: Person
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
