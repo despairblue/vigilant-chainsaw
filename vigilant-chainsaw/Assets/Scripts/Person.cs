@@ -36,6 +36,9 @@ public class Person : MonoBehaviour
     public GameObject soap;
     public GameObject flour;
 
+    // Other Stuff
+    public GameObject scoreTemplate;
+
     // GameLoop
     public float timeBetweenStateChangesSeconds = 3f;
     public float variance = 0.5f;
@@ -54,10 +57,13 @@ public class Person : MonoBehaviour
     {
         var gameStateGameObject = GameObject.FindGameObjectWithTag("GameState");
         gameState = gameStateGameObject.GetComponent<GameState>();
+
         stateGameObjectsList = new List<Transform> { normalWaiting, veryWaiting, happy, angry };
         needsGameObjectsList = new List<GameObject> { toiletPaper, soap, flour };
+
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = false;
+
         StartCoroutine(ChangeState());
         StartCoroutine(ChangeSpeed());
     }
@@ -78,7 +84,8 @@ public class Person : MonoBehaviour
             {
                 Debug.Log("Thanks");
                 state = State.Happy;
-                gameState.IncreaseScore(100);
+                // gameState.IncreaseScore(100);
+                CreateScoreObject();
             }
             else
             {
@@ -92,10 +99,12 @@ public class Person : MonoBehaviour
         }
     }
 
-    // private void SetState(State newState) {
-
-
-    // }
+    private void CreateScoreObject()
+    {
+        var score = Instantiate(scoreTemplate);
+        score.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
+        score.SetActive(true);
+    }
 
     private void Render()
     {

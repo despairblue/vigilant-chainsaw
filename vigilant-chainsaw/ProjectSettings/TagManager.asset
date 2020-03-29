@@ -9,6 +9,8 @@ TagManager:
   - Yeast
   - Person
   - GameState
+  - Cube
+  - Score
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Score
   - 
   - 
   - 
