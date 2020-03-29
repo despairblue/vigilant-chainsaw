@@ -37,12 +37,12 @@ public class GroceriesGun : MonoBehaviour
             SelectGrocery(active + 1);
         }
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("l"))
         {
             canon.Rotate(0, 0, -canonRotationSpeed);
         }
 
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown("j"))
         {
             canon.Rotate(0, 0, canonRotationSpeed);
         }
