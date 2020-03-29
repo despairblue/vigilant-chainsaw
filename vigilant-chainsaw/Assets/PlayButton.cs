@@ -8,11 +8,13 @@ public class PlayButton : MonoBehaviour
 {
     public Button playButton;
     public Button creditButton;
+    public Button exitButton;
     // Start is called before the first frame update
     void Start()
     {
         playButton.onClick.AddListener(Play);
         creditButton.onClick.AddListener(GoToCredits);
+        exitButton.onClick.AddListener(Exit);
     }
 
     // Update is called once per frame
@@ -29,5 +31,10 @@ public class PlayButton : MonoBehaviour
     public void GoToCredits()
     {
         SceneManager.LoadScene("CreditsScreen");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
