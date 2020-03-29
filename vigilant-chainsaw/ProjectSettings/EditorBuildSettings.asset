@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu Danny.unity
-    guid: 09873ada6d3796d7da35d2e2ac2db761
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0faa0b67bf18c564796b96e938419e67
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 6aa895defe6208b44a66a2f0b4f5a65b
+  - enabled: 1
+    path: Assets/Scenes/MainMenu Danny.unity
+    guid: 09873ada6d3796d7da35d2e2ac2db761
   - enabled: 1
     path: Assets/Scenes/Danny.unity
     guid: 5a0b783b45289bfb8a17baf755956ff0
   - enabled: 1
     path: Assets/Scenes/Game Danny.unity
     guid: 6e842524a3af7b2309e60c17aba77c94
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 0faa0b67bf18c564796b96e938419e67
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 3f4828c2cd10c69dcae350293be48471
