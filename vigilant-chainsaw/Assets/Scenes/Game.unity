@@ -4930,6 +4930,7 @@ GameObject:
   - component: {fileID: 149650609}
   - component: {fileID: 149650608}
   - component: {fileID: 149650610}
+  - component: {fileID: 149650611}
   m_Layer: 0
   m_Name: Yeast
   m_TagString: Yeast
@@ -5046,6 +5047,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &149650611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149650606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b658ccdc658e006a3a60316b3411a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDestructThreshold: -10
 --- !u!1 &211573234
 GameObject:
   m_ObjectHideFlags: 0
@@ -16581,6 +16595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b658ccdc658e006a3a60316b3411a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selfDestructThreshold: -10
 --- !u!1 &1572652749
 GameObject:
   m_ObjectHideFlags: 0
@@ -17169,6 +17184,7 @@ GameObject:
   - component: {fileID: 1797404311}
   - component: {fileID: 1797404310}
   - component: {fileID: 1797404312}
+  - component: {fileID: 1797404313}
   m_Layer: 0
   m_Name: Desinfectant
   m_TagString: Desinfectant
@@ -17285,6 +17301,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1797404313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797404308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b658ccdc658e006a3a60316b3411a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDestructThreshold: -10
 --- !u!1 &1807466200
 GameObject:
   m_ObjectHideFlags: 0
