@@ -133,6 +133,7 @@ public class Person : MonoBehaviour
                         break;
                     case State.VeryWaiting:
                         state = State.Angry;
+                        gameState.ReduceLife();
                         break;
                     case State.Happy:
                     case State.Angry:
