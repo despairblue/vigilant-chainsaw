@@ -23,14 +23,25 @@ public class Person : MonoBehaviour
 {
     public Groceries need = Groceries.Nothing;
     public State state = State.Complacent;
+
+    // States
     public Transform normalWaiting;
     public Transform veryWaiting;
     public Transform happy;
     public Transform angry;
+
+    // Needs
+    public GameObject bubble;
+    public GameObject toiletPaper;
+    public GameObject soap;
+    public GameObject flour;
+
+    // GameLoop
     public float timeBetweenStateChangesSeconds = 3f;
     public float chanceOfStateChange = 0.5f;
 
     private List<Transform> stateGameObjectsList;
+    private List<GameObject> needsGameObjectsList;
     private GameState gameState;
     private BoxCollider2D boxCollider;
 
@@ -41,6 +52,7 @@ public class Person : MonoBehaviour
         var gameStateGameObject = GameObject.FindGameObjectWithTag("GameState");
         gameState = gameStateGameObject.GetComponent<GameState>();
         stateGameObjectsList = new List<Transform> { normalWaiting, veryWaiting, happy, angry };
+        needsGameObjectsList = new List<GameObject> { toiletPaper, soap, flour };
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = false;
         StartCoroutine(ChangeState());
@@ -80,21 +92,54 @@ public class Person : MonoBehaviour
 
     private void Render()
     {
-        var go = GetCurrentStatesGameObject();
+        var currentStateGameObject = GetCurrentStatesGameObject();
+        var currentNeedGameObject = GetCurrentNeedsGameObject();
 
-        stateGameObjectsList.ForEach(delegate (Transform transform)
+        // RENDER STATE
+        stateGameObjectsList.ForEach(delegate (Transform stateTransform)
         {
-            // Don't deactivate the current go, so that particle effects are not
-            // reset and keep running.
-            if (transform.gameObject != go)
+            if (stateTransform.gameObject == currentStateGameObject)
             {
-                transform.gameObject.SetActive(false);
+                SetActiveIfChanged(stateTransform.gameObject, true);
+            }
+            else
+            {
+                SetActiveIfChanged(stateTransform.gameObject, false);
+
             }
         });
 
-        if (go && !go.activeSelf)
+        // RENDER NEEDS
+        if (currentNeedGameObject == null)
         {
-            go.SetActive(true);
+            // Disable bubble if we don't have any needs.
+            SetActiveIfChanged(bubble, false);
+        }
+        else
+        {
+            // Enable bubble if we have needs.
+            SetActiveIfChanged(bubble, true);
+            // Disable all but the current need.
+            needsGameObjectsList.ForEach(delegate (GameObject needGameObject)
+            {
+                if (needGameObject == currentNeedGameObject)
+                {
+                    SetActiveIfChanged(needGameObject, true);
+                }
+                else
+                {
+                    SetActiveIfChanged(needGameObject, false);
+                }
+
+            });
+        }
+    }
+
+    private void SetActiveIfChanged(GameObject gameObject, bool active)
+    {
+        if (gameObject.activeSelf != active)
+        {
+            gameObject.SetActive(active);
         }
     }
 
@@ -115,6 +160,21 @@ public class Person : MonoBehaviour
         }
     }
 
+    private GameObject GetCurrentNeedsGameObject()
+    {
+        switch (need)
+        {
+            case Groceries.Desinfectant:
+                return soap;
+            case Groceries.ToiletPaper:
+                return toiletPaper;
+            case Groceries.Yeast:
+                return flour;
+            default:
+                return null;
+        }
+    }
+
     private IEnumerator ChangeState()
     {
         while (true)
@@ -123,7 +183,7 @@ public class Person : MonoBehaviour
 
             var chance = Random.Range(0f, 1f);
 
-            if (chance > chanceOfStateChange)
+            if (chance < chanceOfStateChange)
             {
                 switch (state)
                 {

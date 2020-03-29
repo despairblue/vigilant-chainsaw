@@ -5913,7 +5913,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f16fc379da58ca44db3860b8d9e93e90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83d126c8b3951fd459d16428b152e704, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16865,7 +16865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1296727928
 Transform:
   m_ObjectHideFlags: 0
@@ -16903,6 +16903,10 @@ MonoBehaviour:
   veryWaiting: {fileID: 1889087699}
   happy: {fileID: 920185741}
   angry: {fileID: 829234328}
+  bubble: {fileID: 680760194}
+  toiletPaper: {fileID: 1277848834}
+  soap: {fileID: 1255501431}
+  flour: {fileID: 1241714174}
   timeBetweenStateChangesSeconds: 3
   chanceOfStateChange: 0.5
 --- !u!61 &1296727930
@@ -17479,7 +17483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1689497776
 Transform:
   m_ObjectHideFlags: 0
@@ -17517,6 +17521,10 @@ MonoBehaviour:
   veryWaiting: {fileID: 1025373341}
   happy: {fileID: 481924277}
   angry: {fileID: 893276125}
+  bubble: {fileID: 1255722693}
+  toiletPaper: {fileID: 1586946372}
+  soap: {fileID: 80205491}
+  flour: {fileID: 584795624}
   timeBetweenStateChangesSeconds: 3
   chanceOfStateChange: 0.5
 --- !u!61 &1689497778
@@ -17613,7 +17621,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f16fc379da58ca44db3860b8d9e93e90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a56b3d5ea3a76d24aa7212d80d7617ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18311,7 +18319,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f16fc379da58ca44db3860b8d9e93e90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56a9cb4fdba408f41ad36c2bb1dec91f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18586,6 +18594,10 @@ MonoBehaviour:
   veryWaiting: {fileID: 1720343311}
   happy: {fileID: 1912433070}
   angry: {fileID: 596632456}
+  bubble: {fileID: 367740452}
+  toiletPaper: {fileID: 1216961038}
+  soap: {fileID: 148204104}
+  flour: {fileID: 1479268798}
   timeBetweenStateChangesSeconds: 3
   chanceOfStateChange: 0.5
 --- !u!61 &2027366296
