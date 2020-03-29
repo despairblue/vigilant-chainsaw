@@ -10,7 +10,7 @@ TagManager:
   - Person
   - GameState
   - Cube
-  - Score
+  - HighScore
   layers:
   - Default
   - TransparentFX

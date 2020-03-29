@@ -10,9 +10,13 @@ public class GameState : MonoBehaviour
     public int currentScore = 0;
     public int currentLifes = 3;
 
+    private PersistentHighScore persistentHighScore;
+
     // Start is called before the first frame update
     void Start()
     {
+        persistentHighScore = GameObject.FindWithTag("HighScore").GetComponent<PersistentHighScore>();
+
         Render();
     }
 
@@ -58,6 +62,8 @@ public class GameState : MonoBehaviour
 
         if (currentLifes <= 0)
         {
+            persistentHighScore.SetHighScore(currentScore);
+
             SceneManager.LoadScene("MainMenu");
         }
     }
