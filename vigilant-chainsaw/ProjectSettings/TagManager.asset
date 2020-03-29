@@ -8,6 +8,7 @@ TagManager:
   - Desinfectant
   - Yeast
   - Person
+  - GameState
   layers:
   - Default
   - TransparentFX

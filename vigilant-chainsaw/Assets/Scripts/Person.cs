@@ -31,11 +31,14 @@ public class Person : MonoBehaviour
     public float chanceOfStateChange = 0.5f;
 
     private List<Transform> stateGameObjectsList;
+    private GameState gameState;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        var gameStateGameObject = GameObject.FindGameObjectWithTag("GameState");
+        gameState = gameStateGameObject.GetComponent<GameState>();
         stateGameObjectsList = new List<Transform> { normalWaiting, veryWaiting, happy, angry };
         StartCoroutine(ChangeState());
     }
@@ -56,11 +59,13 @@ public class Person : MonoBehaviour
             {
                 Debug.Log("Thanks");
                 state = State.Happy;
+                gameState.IncreaseScore(100);
             }
             else
             {
                 Debug.Log("Hey!");
                 state = State.Angry;
+                gameState.ReduceLife();
             }
         }
     }
