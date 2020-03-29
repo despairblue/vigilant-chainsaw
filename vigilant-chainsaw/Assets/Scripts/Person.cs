@@ -32,6 +32,7 @@ public class Person : MonoBehaviour
 
     private List<Transform> stateGameObjectsList;
     private GameState gameState;
+    private BoxCollider2D boxCollider;
 
 
     // Start is called before the first frame update
@@ -40,6 +41,8 @@ public class Person : MonoBehaviour
         var gameStateGameObject = GameObject.FindGameObjectWithTag("GameState");
         gameState = gameStateGameObject.GetComponent<GameState>();
         stateGameObjectsList = new List<Transform> { normalWaiting, veryWaiting, happy, angry };
+        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.enabled = false;
         StartCoroutine(ChangeState());
     }
 
@@ -127,6 +130,7 @@ public class Person : MonoBehaviour
                     case State.Complacent:
                         need = (Groceries)Random.Range(1, System.Enum.GetNames(typeof(Groceries)).Length);
                         state = State.NormalWaiting;
+                        boxCollider.enabled = true;
                         break;
                     case State.NormalWaiting:
                         state = State.VeryWaiting;
@@ -139,6 +143,7 @@ public class Person : MonoBehaviour
                     case State.Angry:
                         need = Groceries.Nothing;
                         state = State.Complacent;
+                        boxCollider.enabled = false;
                         break;
                 }
             }
