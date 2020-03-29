@@ -870,7 +870,9 @@ MonoBehaviour:
     \ (3.0) license. http://dig.ccmixter.org/files/NiGiD/61244 Ft: Doxent\n\nJam after
     brunch by Stefan Kartenberg (c) copyright 2020 Licensed under a Creative Commons
     Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/JeffSpeed68/61271
-    Ft: Javolenus\n\nClick Sound by https://www.pacdv.com/sounds/interface_sound_effects/sound83.wav\n\n\n\n\n\n\n\nProgramming
+    Ft: Javolenus\n\nClick Sound by https://www.pacdv.com/sounds/interface_sound_effects/sound83.wav\n\nScore
+    Sound by https://www.pacdv.com/sounds/mechanical_sound_effects/cling_1.wav\n\nLose
+    sound by https://www.pacdv.com/sounds/interface_sound_effects/sound17.mp3\n\n\n\nProgramming
     by Danny Martini\n\nArt and UI by Elise Gr\xFCnewald"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16485b2b3210fff4d92ce36c73a846fc, type: 2}
@@ -941,10 +943,10 @@ MonoBehaviour:
   m_margin: {x: 100, y: 50, z: 100, w: 50}
   m_textInfo:
     textComponent: {fileID: 911372354}
-    characterCount: 559
+    characterCount: 717
     spriteCount: 0
-    spaceCount: 73
-    wordCount: 84
+    spaceCount: 79
+    wordCount: 111
     linkCount: 0
     lineCount: 19
     pageCount: 1
